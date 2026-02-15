@@ -11,8 +11,8 @@ export class studentService {
 constructor(private _http:HttpClient){}
 
 
-    BASE_URL=environment.BASE_URL
-    STUDENT_URL=`${this.BASE_URL}/student.json`
+    BASE_URL1=environment.BASE_URL
+    STUDENT_URL=`${this.BASE_URL1}/student.json`
 
 
 private craetesub:Subject<Istudent>=new Subject<Istudent>()
@@ -59,12 +59,12 @@ update(obj:Istudent){
 
 
     onremove(id:string):Observable<string>{
-        let remove_url=`${this.BASE_URL}/student/${id}.json`
+        let remove_url=`${this.BASE_URL1}/student/${id}.json`
        return  this._http.delete<string>(remove_url)
     }
 
     onupdate(obj:Istudent):Observable<Istudent>{
-        let update_url=`${this.BASE_URL}/student/${obj.id}.json`
+        let update_url=`${this.BASE_URL1}/student/${obj.id}.json`
         return this._http.patch<Istudent>(update_url,obj)
     }
 
